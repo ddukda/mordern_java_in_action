@@ -4,10 +4,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-@Service
 public class Study01 {
 
-    public List<Apple> sort (){
+    public static List<Apple> sort (){
         List<Apple> appleList = new ArrayList<>();
 
         appleList.add(new Apple(5));
