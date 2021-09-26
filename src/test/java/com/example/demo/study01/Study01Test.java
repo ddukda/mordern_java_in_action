@@ -1,11 +1,8 @@
-package com.example.study01;
+package com.example.demo.study01;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Study01Test {
 

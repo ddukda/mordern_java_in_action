@@ -1,6 +1,4 @@
-package com.example.study01;
-
-import org.springframework.stereotype.Service;
+package com.example.demo.study01;
 
 import java.util.*;
 

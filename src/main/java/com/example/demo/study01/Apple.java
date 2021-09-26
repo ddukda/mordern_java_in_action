@@ -1,4 +1,4 @@
-package com.example.study01;
+package com.example.demo.study01;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
