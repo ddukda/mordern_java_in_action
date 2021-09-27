@@ -2,36 +2,32 @@ package com.example.demo.common.controller;
 
 import com.example.demo.common.entity.CommonEntity;
 import com.example.demo.common.model.CommonDto;
-import com.example.demo.common.repository.CommonRepository;
+import com.example.demo.common.service.CommonService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequestMapping("/common")
 @AllArgsConstructor
 public class CommonController {
 
-    private final CommonRepository commonRepository;
+    private final CommonService commonService;
 
 
     @GetMapping("")
-    public String main() {
+    public List<CommonEntity> getCommonList() {
+        return commonService.getCommonList();
+    }
 
-        CommonDto commonDto = new CommonDto();
-        commonDto.setName("JiNO");
-        commonDto.setDesc("test common controller");
-        commonRepository.save(commonDto.dtoToEntity());
+    @GetMapping("/{id}")
+    public CommonEntity getCommon(@PathVariable Integer id) {
+        return commonService.getCommon(id);
+    }
 
-        Optional<CommonEntity> byId = commonRepository.findById(1);
-        System.out.println("byId.get().getName() = " + byId.get().getName());
-
-        commonRepository.findAll().stream().forEach(commonEntity -> System.out.println("commonEntity.getId() = " + commonEntity.getId()));
-        
-        return "hello world!";
+    @PostMapping("")
+    public CommonEntity saveCommon(@RequestBody CommonDto commonDto) {
+        return commonService.saveCommon(commonDto);
     }
 }
