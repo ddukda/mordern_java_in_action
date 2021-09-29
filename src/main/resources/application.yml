@@ -13,9 +13,3 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
-logging:
-  level:
-    org:
-      springframework: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
