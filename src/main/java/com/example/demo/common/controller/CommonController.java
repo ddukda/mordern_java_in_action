@@ -15,7 +15,6 @@ public class CommonController {
 
     private final CommonService commonService;
 
-
     @GetMapping("")
     public List<CommonEntity> getCommonList() {
         return commonService.getCommonList();

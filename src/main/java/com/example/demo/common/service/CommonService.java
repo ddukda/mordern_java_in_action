@@ -25,4 +25,5 @@ public class CommonService {
     public CommonEntity saveCommon(CommonDto commonDto) {
         return commonRepository.save(commonDto.dtoToEntity());
     }
+
 }
